@@ -14,13 +14,28 @@ val flinkDependencies = Seq(
   "org.apache.flink" %% "flink-streaming-scala" % flinkVersion,
   "org.apache.flink" %% "flink-connector-kafka" % flinkVersion)
 
+
+
+
+val circeVersion = "0.14.1"
+
+lazy val circeDependencies = Seq(
+  "io.circe" %% "circe-core" % circeVersion,
+  "io.circe" %% "circe-generic" % circeVersion,
+  "io.circe" %% "circe-parser" % circeVersion
+)
+
+
+
+
 lazy val root = (project in file(".")).
   settings(
     libraryDependencies ++= flinkDependencies,
+    libraryDependencies ++= circeDependencies,
     // assembly / mainClass := Some("net.persgroep.basic.BasicStreaming"),
     // assembly / mainClass := Some("net.persgroep.basic.StreamToLowerCase"),
     // assembly / mainClass := Some("net.persgroep.basic.BasicTumblingWindow"),
-    assembly / mainClass := Some("net.persgroep.basic.BasicTumblingWindow"),
+    assembly / mainClass := Some("net.persgroep.jsonparser.JsonParser"),
   )
 
 // assembly / mainClass := Some("net.persgroep.basic.BasicStreaming")
