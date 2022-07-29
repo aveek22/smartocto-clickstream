@@ -19,6 +19,7 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= flinkDependencies,
     // assembly / mainClass := Some("net.persgroep.basic.BasicStreaming"),
     // assembly / mainClass := Some("net.persgroep.basic.StreamToLowerCase"),
+    // assembly / mainClass := Some("net.persgroep.basic.BasicTumblingWindow"),
     assembly / mainClass := Some("net.persgroep.basic.BasicTumblingWindow"),
   )
 
