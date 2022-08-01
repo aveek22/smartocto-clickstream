@@ -25,6 +25,11 @@ lazy val circeDependencies = Seq(
   "io.circe" %% "circe-parser" % circeVersion
 )
 
+lazy val testDependencies = Seq(
+  "org.scalatest" %% "scalatest" % "3.2.7",
+  "org.scalatest" %% "scalatest" % "3.2.7" % "test"
+)
+
 
 
 
@@ -32,6 +37,7 @@ lazy val root = (project in file(".")).
   settings(
     libraryDependencies ++= flinkDependencies,
     libraryDependencies ++= circeDependencies,
+    libraryDependencies ++= testDependencies,
     // assembly / mainClass := Some("net.persgroep.basic.BasicStreaming"),
     // assembly / mainClass := Some("net.persgroep.basic.StreamToLowerCase"),
     // assembly / mainClass := Some("net.persgroep.basic.BasicTumblingWindow"),
