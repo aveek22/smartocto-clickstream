@@ -2,19 +2,19 @@ package net.persgroep.basic
 
 /*
 * This is a basic streaming program that reads string values from a kafka topic
-* and writes to another kafka topic. It takes 10 seconds as a tumbling window 
+* and writes to another kafka topic. It takes 10 seconds as a tumbling window
 * and counts the number of words in that specific window.
-* 
+*
 * It is almost similar to BasicTumblingWindow, just that instead of String output
 * it serializes the tuples into Kafka Producer
 *
 * To compile simply run: sbt clean compile
 * To run locally: sbt run
-* 
-* 
-* The program will start execution locally, need to open the kafka console producer and consumer on 
+*
+*
+* The program will start execution locally, need to open the kafka console producer and consumer on
 * two different terminals to view the outputs.
-* 
+*
 */
 
 import org.apache.flink.api.common.serialization.SimpleStringSchema
@@ -32,7 +32,7 @@ import org.apache.flink.api.common.time
 object BasicTumblingWindowWithSchema {
 
   def main(args: Array[String]): Unit = {
-    
+
     // Create the flink execution environment
     val flinkEnv: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     // flinkEnv.setParallelism(1)

@@ -7,12 +7,14 @@ organization := "net.persgroep"
 ThisBuild / scalaVersion := "2.12.16"
 
 val flinkVersion = "1.13.6"
+val snowplowVersion = "2.1.0"
 
 val flinkDependencies = Seq(
-  "org.apache.flink" %% "flink-clients" % flinkVersion,
-  "org.apache.flink" %% "flink-scala" % flinkVersion,
-  "org.apache.flink" %% "flink-streaming-scala" % flinkVersion,
-  "org.apache.flink" %% "flink-connector-kafka" % flinkVersion)
+    "org.apache.flink" %% "flink-clients" % flinkVersion,
+    "org.apache.flink" %% "flink-scala" % flinkVersion,
+    "org.apache.flink" %% "flink-streaming-scala" % flinkVersion,
+    "org.apache.flink" %% "flink-connector-kafka" % flinkVersion,
+    "com.snowplowanalytics" %% "snowplow-scala-analytics-sdk" % snowplowVersion)
 
 
 
@@ -26,7 +28,7 @@ lazy val circeDependencies = Seq(
 )
 
 lazy val testDependencies = Seq(
-  "org.scalatest" %% "scalatest" % "3.2.7",
+//  "org.scalatest" %% "scalatest" % "3.2.7",
   "org.scalatest" %% "scalatest" % "3.2.7" % "test"
 )
 
